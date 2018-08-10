@@ -1,0 +1,10 @@
+<!-- RIGHT COLUMN (LIST COMPONENT): START -->
+<section class="col-md-4 col-sm-12 col-xs-12">
+  <h2 class="pz-list-title">Our Hottest News:</h2>
+  <ul class="list-group list-unstyled" *ngIf="newsList">
+    <li class="list-group-item pz-list-item"  *ngFor="let newsItem of newsList; index as i">
+      <a data-id="{{ newsItem['id'] }}" [attr.data-id]="newsItem['id']" (click)="loadFullArticle($event)" >{{ newsItem['webTitle'] }}</a>
+    </li>
+  </ul>
+</section>
+<!-- RIGHT COLUMN (LIST COMPONENT): END -->

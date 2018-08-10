@@ -1,0 +1,23 @@
+{
+  "compileOnSave": false,
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/app",
+    "baseUrl": ".",
+    "paths": {
+      "@pz-app/*": ["app/*"],
+      "@pz-service/*": ["app/services/*"],
+      "@pz-store/*": ["app/store/*"],
+      "@pz-models/*": ["app/store/models/*"],
+      "@pz-actions/*": ["app/store/actions/*"],
+      "@pz-reducers/*": ["app/store/reducers/*"],
+      "@pz-components/*": ["app/components/*"],
+      "@pz-environments/*": ["environments/*"]
+    },
+    "types": []
+  },
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
+  ]
+}

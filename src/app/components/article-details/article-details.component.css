@@ -1,0 +1,15 @@
+.pz-byline{
+  background: #D4D4D5;
+  padding: 5px 15px;
+  border: solid 1px #bdbdbd;
+}
+.pz-date{
+  border: solid 1px #bdbdbd;
+  background: #e2e2e2;
+  padding: 5px 15px;
+  border-left:none;
+}
+
+.pz-pix-wrapper{
+  display: block;
+}

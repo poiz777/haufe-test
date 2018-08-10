@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+  /* line 5, ../scss/basis.scss */
+  .pz-article-title,
+  aside.col-xs-12.pz-lm-0.pz-lp-0 {
+    margin: 0 0 2px 0;
+  }
+
+  /* line 10, ../scss/basis.scss */
+  span.pz-paragraph.pull-right {
+    float: none !important;
+    flex-flow: column;
+  }
+}

@@ -1,0 +1,34 @@
+<!-- LEFT COLUMN (ARTICLE COMPONENT): BEGIN -->
+<section class="col-md-8 col-sm-12 col-xs-12" *ngIf="activeNews === undefined ">
+    <div>
+      <fa name="cog" size="5x" animation="spin"></fa>
+    </div>
+</section>
+
+<section class="col-md-8 col-sm-12 col-xs-12" *ngIf="activeNews">
+  <div class="pz-pix-wrapper"  *ngIf="activeNews.fields.main" [innerHTML]="activeNews.fields.main"></div>
+  <h1 class="pz-article-title">{{activeNews.webTitle }} </h1>
+
+  <aside class="col-md-12 col-sm-12 col-xs-12 pz-lm-0 pz-lp-0">
+    <!-- BYLINE: BEGIN -->
+    <div class="col-md-6 col-sm-6 col-xs-6 pz-lp-0 pz-byline">
+      <span class="pz-paragraph" *ngIf="!activeNews.fields || !activeNews.fields.byline">Anonymous Author</span>
+      <span class="pz-paragraph" *ngIf="activeNews.fields.byline" [innerHTML]="activeNews.fields.byline"></span>
+    </div>
+    <!-- BYLINE: END -->
+
+    <!-- DATE: BEGIN -->
+    <div class="col-md-6 col-sm-6 col-xs-6 pz-rp-0 pz-date">
+      <span class="pz-paragraph pull-right" *ngIf="!activeNews.fields.firstPublicationDate" >Unspecified Dated</span>
+      <span class="pz-paragraph pull-right" *ngIf="activeNews.fields.firstPublicationDate"
+            [innerHTML]="getFormattedArticleDate(activeNews.fields.firstPublicationDate)"></span>
+    </div>
+    <!-- DATE: END -->
+  </aside>
+
+  <section class="pz-article-content" *ngIf="activeNews.fields.body">
+    <p class="pz-paragraph" [innerHTML]="activeNews.fields.body"></p>
+  </section>
+
+</section>
+<!-- LEFT COLUMN (ARTICLE COMPONENT): END -->

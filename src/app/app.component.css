@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,500,600,700,700i|EB+Garamond:400,500,600,600i,700,700i|Jaldi:400,700|Poiret+One|Wire+One');
+
+.pz-header-box {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  background-color: #3e3e3e;
+  border-bottom: solid 2rem gray;
+  margin-bottom: 2em;
+}
+
+.pz-header-box .pz-logo{
+  min-width: 300px;
+  padding: 2rem;
+}
+
+:host >>> .pz-list-title,
+:host >>> .pz-article-title{
+  text-transform: uppercase;
+  color: #464646;
+}
+
+:host >>> .pz-article-title{
+  font-family: 'EB Garamond', serif;
+  font-weight: 700;
+  font-size: 20px;
+  background: #e8e8e8;
+  text-align: left;
+  padding: 10px;
+  margin: 0 0 2px 0; /* 0 15px 2px 0;*/
+  border: solid 1px #c1c1c1;
+}
+
+:host >>> .pz-list-title{
+  margin-top: 0;
+  background: #a0a0a0;
+  padding: 7px 10px;
+  border: solid #757575 1px;
+  font-size: 3.75em;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-family: 'Wire One', sans-serif;
+}
+
+.pz-dyna-pix{
+  width: 100%;
+}
+
+:host >>> .pz-paragraph{
+  font-family: 'EB Garamond', serif;
+  font-size: 1.35em;
+  color: black;
+}
+
+:host >>> .pz-lm-0{
+  margin-left: 0;
+}
+
+:host >>> .pz-lp-0{
+  padding-left: 0;
+}
+
+:host >>> .pz-rm-0{
+  margin-right: 0;
+}
+
+:host >>> .pz-rp-0{
+  padding-right: 0;
+}
+
+:host >>> ul li.list-group-item.pz-list-item a {
+  display:inline-block;
+  color: black;
+  text-decoration:none;
+  cursor:pointer;
+  transition: all 0.5s;
+}
+
+:host >>>li.list-group-item.pz-list-item a:hover {
+  color: #969696;
+}
+
+.pz-article-content{}
+
+
+:host >>> .pz-pix-wrapper figure,
+:host >>> .pz-pix-wrapper figure img,
+:host >>> .pz-paragraph figure,
+:host >>> .pz-paragraph figure img,
+:host >>> .pz-article-content img,
+:host >>> .pz-article-content figure{
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+  -o-transition: border .2s ease-in-out;
+  transition: border .2s ease-in-out;
+}
+
+:host >>> .pz-pix-wrapper figcaption,
+:host >>> .pz-article-content figcaption{
+  font-family: 'Wire One', sans-serif;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: rebeccapurple;
+}
+
+:host >>>aside.col-md-12.col-sm-12.col-xs-12.pz-lm-0.pz-lp-0{
+  padding-right: 0;
+}
+
+@media screen and (max-width: 480px) {
+  /* line 5, ../scss/basis.scss */
+  :host >>>.pz-article-title,
+  :host >>>aside.col-xs-12.pz-lm-0.pz-lp-0 {
+    margin: 0 0 2px 0;
+  }
+  :host >>>aside.col-xs-12.pz-lm-0.pz-lp-0 {
+    padding-right: 0;
+  }
+
+  /* line 10, ../scss/basis.scss */
+  :host >>>span.pz-paragraph.pull-right {
+    float: none !important;
+    flex-flow: column;
+  }
+
+  :host >>> span.pz-paragraph{
+    font-size: 1em;
+  }
+
+  :host >>> .col-md-6.col-sm-6.col-xs-6.pz-date{
+    text-align: right;
+  }
+}
