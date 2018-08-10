@@ -118,6 +118,7 @@
 
 :host >>>aside.col-md-12.col-sm-12.col-xs-12.pz-lm-0.pz-lp-0{
   padding-right: 0;
+  margin-bottom: 1em;
 }
 
 @media screen and (max-width: 480px) {
