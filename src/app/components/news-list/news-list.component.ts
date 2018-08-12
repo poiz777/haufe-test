@@ -29,21 +29,39 @@ export class NewsListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-      this.newsService.getNewsCollection(20).subscribe(
-      (data: NewsModel[]) => {
-          const collection          = this.newsService.randomizeNews(data['response']['results']);
-          this.newsCollectionModel  = new NewsCollectionModel(collection, this.newsService);
-          this.newsList             = this.newsCollectionModel.getNewsCollection();
-          this.firstNews            = this.newsCollectionModel.getNewsModelByIndex(0);
-          this.store.dispatch( {
-                  type    : 'FETCH_NEWS',
-                  payload : this.firstNews
+      this.store.pipe(select('articles')).subscribe(
+          articles => {
+              if ( articles[0] !== undefined ) {
+                  console.log(articles);
+                  this.newsList = articles;
+              } else {
+                  this.manageStore(20);
               }
-          );
-          },
-      (err: any) => this.errorMessage = err.error
+          }
       );
+  }
 
+  manageStore(numArticles: Number): any {
+      this.newsService.getNewsCollection(numArticles).subscribe(
+          (data: NewsModel[]) => {
+              if (data['response'] === undefined) { return; }
+              const collection          = this.newsService.randomizeNews(data['response']['results']);
+              this.newsCollectionModel  = new NewsCollectionModel(collection, this.newsService);
+              this.newsList             = this.newsCollectionModel.getNewsCollection();
+              this.firstNews            = this.newsCollectionModel.getNewsModelByIndex(0);
+              this.store.dispatch( {
+                      type    : 'FETCH_NEWS',
+                      payload : this.firstNews
+                  }
+              );
+              this.store.dispatch( {
+                      type    : 'FETCH_ALL_NEWS',
+                      payload : this.newsList
+                  }
+              );
+          },
+          (err: any) => this.errorMessage = err.error
+      );
   }
 
   ngOnDestroy() {

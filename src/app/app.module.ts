@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { NewsListComponent } from './components/news-list/news-list.component';
 import { ArticleDetailsComponent } from './components/article-details/article-details.component';
 import { newsReducer } from '@pz-reducers/news.reducer';
+import {newsCollectionReducer} from '@pz-reducers/news-collection.reducer';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { newsReducer } from '@pz-reducers/news.reducer';
       HttpClientModule,
       AngularFontAwesomeModule,
       StoreModule.forRoot({}),
-      StoreModule.forFeature('article', newsReducer)
+      StoreModule.forFeature('article', newsReducer),
+      StoreModule.forFeature('articles', newsCollectionReducer),
   ],
   providers: [NewsService],
   bootstrap: [AppComponent]

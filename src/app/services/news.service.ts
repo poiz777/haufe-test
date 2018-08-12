@@ -20,7 +20,6 @@ export class NewsService {
     this.feedEndPoint   = this.baseEndPoint + 'search?api-key=' + this.apiKey;
   }
 
-
   getNewsCollection(numArticles: Number = 10): Observable<NewsModel[]> {
     if (this.newsCollection) {
         return of(this.newsCollection);
