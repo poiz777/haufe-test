@@ -1,9 +1,8 @@
-# haufe-test-complete
+# Angular - NGRX Playground
 Simple Exercise using Angular + NgRx with Guardian API 
 
 
-# HaufeGroupTest
-##### A Simple but Practical Exercise using Angular + NgRx with Guardian API 
+##### A Simple but Practical Exercise using Angular + NgRx with Guardian REST-API 
 **Important!!!** This petite-App does not use any Routing....
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
