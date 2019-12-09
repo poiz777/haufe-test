@@ -22,13 +22,16 @@ export class ArticleDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    
       this.store.pipe(select('article')).subscribe(
           article => {
               if (article) {
-                  this.activeNews = article.article;
+                console.log(article);
+                this.activeNews = article.article;
               }
           }
       );
+      
   }
 }
 
