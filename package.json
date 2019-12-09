@@ -30,6 +30,7 @@
     "rxjs": "*",
     "typescript": "^3.5.1",
     "web-animations-js": "^2.3.2",
+    "serialize-javascript": ">=2.1.1",
     "zone.js": "*"
   },
   "devDependencies": {
